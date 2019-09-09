@@ -16,7 +16,6 @@ class CreateGalleriesTable extends Migration
         Schema::create('galleries', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('product_id')->unsigned()->nullable();
-            $table->json('photos');
             $table->timestamps();
             $table->foreign('product_id')->references('id')->on('products');
         });
